@@ -19,7 +19,6 @@ public class ABBint {
             p.dir = inserir(p.dir,info);
         return p;
     }
-
     public void show(NO p){
         if(p!= null){
             show(p.esq);
@@ -27,7 +26,6 @@ public class ABBint {
             show(p.dir);
         }
     }
-
     public int contaNos(NO p, int cont){
         if (p!=null){
             cont++;
@@ -37,7 +35,6 @@ public class ABBint {
         }
         return cont;
     }
-
     public boolean consulta(NO p, int valor){
         if(p!=null){
             if(valor ==p.dado)
@@ -50,7 +47,6 @@ public class ABBint {
         }else
             return false;
     }
-
     public int contaConsulta(NO p,int cont,int valor){
         if(p!=null){
             cont++;
@@ -89,4 +85,18 @@ public class ABBint {
         }
         return p;
     }
+    public int maximo(){
+        NO aux = root;
+        while(aux.dir != null){
+            aux = aux.dir;
+        }
+        return  aux.dado;
+    }
+    public int minimo(){
+        NO aux = root;
+        while (aux.esq != null)
+            aux = aux.esq;
+        return aux.dado;
+    }
+
 }

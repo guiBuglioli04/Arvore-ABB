@@ -14,6 +14,7 @@ public class Main {
             System.out.println("4- Verifica a extistencia de um valor na ABB");
             System.out.println("5- contar quantidade de comparações");
             System.out.println("6-Remove nó escolhido por seu valor");
+            System.out.println("7- valor máximo da árvore");
             opcao = x.nextInt();
             switch (opcao){
                 case 0:
@@ -48,6 +49,18 @@ public class Main {
                     System.out.println("Informe o valor a ser removido");
                     valor = x.nextInt();
                     abb.root = abb.removeValor(abb.root,valor);
+                    break;
+                case 7:
+                    if (abb.root == null)
+                        System.out.println("ABB está vazia");
+                    else
+                        System.out.println("Maior valor é de: "+abb.maximo());
+                    break;
+                case 8:
+                    if (abb.root == null)
+                        System.out.println("ABB está vazia");
+                    else
+                        System.out.println("Menor valor é de: "+abb.minimo());
                     break;
                 default:
                     System.out.println("Opcão inválida");
