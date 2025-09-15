@@ -12,6 +12,8 @@ public class Main {
             System.out.println("2- Apresenta ABB(em ordem)");
             System.out.println("3- Apresenta quantidade de nos da ABB");
             System.out.println("4- Verifica a extistencia de um valor na ABB");
+            System.out.println("5- contar quantidade de comparações");
+            System.out.println("6-Remove nó escolhido por seu valor");
             opcao = x.nextInt();
             switch (opcao){
                 case 0:
@@ -41,6 +43,12 @@ public class Main {
                     System.out.println("Informe o valor a ser pesquisado: ");
                     valor = x.nextInt();
                     System.out.println("Quantidade de comparacoes para pesquisa: "+abb.contaConsulta(abb.root,valor,0));
+                    break;
+                case 6:
+                    System.out.println("Informe o valor a ser removido");
+                    valor = x.nextInt();
+                    abb.root = abb.removeValor(abb.root,valor);
+                    break;
                 default:
                     System.out.println("Opcão inválida");
             }

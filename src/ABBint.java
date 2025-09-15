@@ -35,7 +35,6 @@ public class ABBint {
             cont = contaNos(p.esq , cont);
             cont = contaNos(p.dir,cont);
         }
-
         return cont;
     }
 
@@ -64,5 +63,30 @@ public class ABBint {
 
         }else
             return cont;
+    }
+    public NO removeValor(NO p,int info){
+            NO aux , ref;
+        if(p!=null){
+            if (info == p.dado){
+                if (p.esq == null && p.dir == null)
+                    return null;
+                if(p.esq == null)
+                    return p.dir;
+            }else {
+                ref=p.dir;
+                aux=p.dir;
+                while(aux.esq != null){
+                    aux = aux.esq;
+                }
+                aux.esq=p.esq;
+                return ref;
+            }
+        }else{
+            if (info<p.dado)
+                p.esq = removeValor(p.esq,info);
+            else
+                p.dir = removeValor(p.dir,info);
+        }
+        return p;
     }
 }
